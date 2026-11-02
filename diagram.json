@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "author": "Actividad 11",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -60,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "l298n_in1_out1",
+      "top": -40,
+      "left": 300,
+      "attrs": {
+        "value": "100"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "l298n_in2_out2",
+      "top": 30,
+      "left": 300,
+      "attrs": {
+        "value": "100"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "m1_adelante",
+      "top": -50,
+      "left": 470,
+      "attrs": {
+        "color": "green",
+        "label": "M1 DERECHA"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "m1_atras",
+      "top": -50,
+      "left": 540,
+      "attrs": {
+        "color": "red",
+        "label": "M1 IZQUIERDA"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "l298n_in3_out3",
+      "top": 160,
+      "left": 300,
+      "attrs": {
+        "value": "100"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "l298n_in4_out4",
+      "top": 230,
+      "left": 300,
+      "attrs": {
+        "value": "100"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "m2_adelante",
+      "top": 150,
+      "left": 470,
+      "attrs": {
+        "color": "blue",
+        "label": "M2 DERECHA"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "m2_atras",
+      "top": 150,
+      "left": 540,
+      "attrs": {
+        "color": "yellow",
+        "label": "M2 IZQUIERDA"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:TX",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "esp:RX",
+      "$serialMonitor:TX",
+      "",
+      []
+    ],
+    [
+      "esp:18",
+      "l298n_in1_out1:1",
+      "green",
+      []
+    ],
+    [
+      "esp:19",
+      "l298n_in2_out2:1",
+      "red",
+      []
+    ],
+    [
+      "l298n_in1_out1:2",
+      "m1_adelante:A",
+      "green",
+      []
+    ],
+    [
+      "l298n_in1_out1:2",
+      "m1_atras:C",
+      "green",
+      []
+    ],
+    [
+      "l298n_in2_out2:2",
+      "m1_adelante:C",
+      "red",
+      []
+    ],
+    [
+      "l298n_in2_out2:2",
+      "m1_atras:A",
+      "red",
+      []
+    ],
+    [
+      "esp:21",
+      "l298n_in3_out3:1",
+      "blue",
+      []
+    ],
+    [
+      "esp:22",
+      "l298n_in4_out4:1",
+      "yellow",
+      []
+    ],
+    [
+      "l298n_in3_out3:2",
+      "m2_adelante:A",
+      "green",
+      []
+    ],
+    [
+      "l298n_in3_out3:2",
+      "m2_atras:C",
+      "green",
+      []
+    ],
+    [
+      "l298n_in4_out4:2",
+      "m2_adelante:C",
+      "red",
+      []
+    ],
+    [
+      "l298n_in4_out4:2",
+      "m2_atras:A",
+      "red",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
